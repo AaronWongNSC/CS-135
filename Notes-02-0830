@@ -1,0 +1,46 @@
+Review Turtle homework
+
+Multiple turtles:
+* You can create multiple turtles as long as you give them different names.
+
+Turtle documentation:
+* https://docs.python.org/3.6/library/turtle.html
+---- Spend 5-10 minutes allowing students to play with the commands. Try both turtle and window commands.
+---- Notice that the commands are of the form turtle.something. The something is known as a method, and it is applied to a turtle.
+
+Importing modules
+* Multiple forms:
+---- import module
+---->> This format means that anything you call will be of the form module.something
+---- import module as name
+---->> This allows you to refer to module using a shorter name. A common one is "import matplotlib as plt"
+---- from module import *
+---->> This imports the module but you do not need to use module.something.
+---->> If you replace * with a specific command, it will only import that specific command
+---->> You use this when you need to worry about conflicts between commands or if you're short on memory.
+
+Other modules that are good to know about:
+* numpy - This is a package that allows you to make/use mathematical arrays.
+* pandas - This is a data analysis module
+* matplotlib - This is used for making plots and other graphing
+* scikit-learn - This is an artificial intelligence and machine learning module
+* pygame - This is a module that helps you to make games
+* random - This allows you to generate random numbers
+* time - This gives you access to measure time
+
+Finding tutorials:
+* Python is a very open-information community. This means that almost everything has a tutorial somewhere.
+* Different tutotrials may have different ways of doing things, and different perspectives.
+* The reason we discussed how modules are imported is because you will need to understand the difference when you read tutorials.
+
+Sorting discussion
+* Suppose I give you a shuffled deck of cards and your task is to put it back in order. How will you do it?
+* Create flow charts to describe the different methods.
+* Try to translate how this might look to a computer.
+
+Start Homework
+* Turtle-03-House Exercise
+* Find a tutorial
+* What do you want to learn to do?
+* Sentdex 03 - Tutorial #4 - Variables
+* Sentdex 04 - Tutorial #5 - While Loops
