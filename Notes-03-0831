@@ -1,0 +1,38 @@
+Turtle Racing
+* This is the first substantial piece of code that you're going to look at.
+* This involves ideas and commands that you have not yet seen.
+* Run the code a few times so students can see what happens.
+
+Breaking down the code
+* This code is written rather poorly. It is not a model for what good code should look like. (More later)
+* Here are the features for students to notice:
+---- Comments: Comments are introduced with # and is text to help humans read the code
+---->> Multiline comments can be created using ''' to start and stop it.
+---- Variables: Variables are containers that hold values
+---->> Discuss variable naming, variable naming, and math (+, -, *, /, **, %)
+---- Relational operators: These are symbols that tell Python to compare objects
+---->> Here are the main relational operators: ==, >, >=, <, <=
+---- Loops: These are pieces of code that might be repeated
+---->> Loops will show up in the Sentdex tutorials soon
+---->> Use flowcharts to demonstrate how these work
+---->> Discuss both for loops and while loops
+---- If/Elif/Else: This is part of "flow control" and is part of helping the computer make decisions
+---->> Do some examples of this with relational operators
+---- Note: Under the surface, there are boolean variables and boolean operators, but we won't talk about those now
+* The code has four parts. Have students try to read through the code and figure out what each part does.
+
+Clean code
+* This is a topic usually done quite a bit later, but it's worth talking about now.
+* The idea of clean code is that there are good ways to write code and there are bad ways.
+* Most people at the early level focus on little things like indentation (which Python forces you to do) and visual aspects like that.
+* But clean code is much deeper, and goes to the core of software engineering.
+* Clean code is code that works and is easy to follow.
+* It comes down to writing things in a manner that "make sense."
+* We will be introduced to functions shortly, but the idea of a function is that it's kind of a mini-program inside a larger program.
+* By doing things this way, programs can be expressed in a simpler manner: drawTrack(), countdown(), moveTurtle(), etc.
+* Notice the close connection between a flowchart and clean coding.
+
+Start Homework
+* Improvements to Turtle Racing
+* Sentdex 07 - Tutorial #6 - For Loops
+* Sentdex 08 - Tutorial #7 - If statement

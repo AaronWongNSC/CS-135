@@ -1,0 +1,33 @@
+Flow Charts
+* As discussed previously, flow charts help to understand a process. We will keep ours fairly basic
+---- https://www.smartdraw.com/flowchart/flowchart-symbols.htm
+---- http://www.conceptdraw.com/How-To-Guide/flowchart-symbols
+* If you have a flow chart, you should be able to walk through the process step by step and run it as if you were a machine.
+* Go through the flow chart for Triangular numbers
+---- https://github.com/AaronWongNSC/CS-135/blob/master/FlowChart-PerfectNumbers.pdf
+* Go through the flow chart for Perfect numbers
+---- https://github.com/AaronWongNSC/CS-135/blob/master/FlowChart-PerfectNumbers.pdf
+---- Notice that the decision step is actually a complex step, so that there's a subroutine that actually needs to run
+---- If we were to draw that subroutine in, this flowchart would be much more difficult to follow.
+---- This is an example of the concept of clean code.
+
+Project Euler
+* Introduction
+---- These are good problems that help to focus on the problem-solving side of programming.
+---- The first key to many of these problems is to really think through the processes involved.
+---- The second key is the proper implemetation of the processes through programming.
+* Have students sign up
+
+Project Euler - Problem #1
+* Have the students read through it to make sure they understand the problem
+* Give them 10 minutes to think through how they would set up a process to complete the problem
+* Have the class discuss the process and draw up a flow chart for it.
+* Discuss the importance of printing as part of debugging
+* Allow the students to try to code it
+
+Start Homework
+* Writing 04 - Prime Numbers
+* Project Euler 04 - Problem #1
+* HW 04 - Project Euler #1 Extension
+* Sentdex 04 - 09 - Tutorial #25 - Lists and Tuples
+* Sentdex 04 - 10 - Tutorial #26 - List Manipulation
