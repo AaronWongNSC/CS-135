@@ -1,0 +1,26 @@
+Prime Numbers
+* Discuss the prime number assignment
+* Allow the class the chance to develop a flow chart for prime testing
+* Convert that flow chart into a program
+---- The output of the program should state whether the number is prime or composite.
+
+More about printing
+* https://docs.python.org/3/library/functions.html?highlight=print%20sep#print
+---- sep and end are two important parameters to control when trying to manage output
+* https://docs.python.org/3/tutorial/inputoutput.html
+---- Usage of {} and .format together in creating strings to print
+---- {x:n} prints the x-th position in a space of at least n characters
+---- d is for integers, f is for decimals, and .3f prints 3 decimals.
+
+Write a factor-finding program
+* This is conceptually similar to the prime-finding program
+* The output should list the factors (separated by a couple spaces) in a sentence:
+---- "The factors of 18 are 1, 2, 3, 6, 9, 18"
+* Note: This should be done without lists.
+
+Start Homework
+* Writing 04 - Prime Numbers
+* Project Euler 04 - Problem #1
+* HW 04 - Project Euler #1 Extension
+* Sentdex 05 - 09 - Tutorial #25 - Lists and Tuples
+* Sentdex 05 - 10 - Tutorial #26 - List Manipulation
