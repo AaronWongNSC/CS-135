@@ -1,0 +1,40 @@
+Syllabus review
+
+Introduction to Computer Science
+* https://www.youtube.com/watch?v=-xFJM3QQ3TE (3:30)
+---- There are lots of ways to describe computer science.
+---- Most computer science programs are directed more towards computer architecture (theoretical).
+---- Our outcomes are directed specifically at programming (practical).
+
+Introduction to Programming
+* https://www.youtube.com/watch?v=THOEQ5soVpY (1:55)
+---- Yes, it's a video "for kids" but it's a short video that says what I want it to say.
+---- The goal is to realize that the type of logic in programming has applications everywhere.
+
+Introduction to Python
+* https://www.itworld.com/article/2693392/python-squeezes-out-javascript-c-as-best-starter-programming-language.html
+* https://www.itworld.com/article/2696289/cloud-computing/more-evidence-that-python-is-the-best-starter-programming-language.html
+---- Notice that these articles are relatively recent. The trend towards Python has continued.
+---- HW - https://www.youtube.com/watch?v=W9dwGZ6yY0k
+* Note: We are using Python 3.6.
+---- There are "two" versions of Python, known as Python 2 and Python 3.
+---- I believe that the future is in Python 3, though lots of people use Python 2.
+---- It is not that difficult to swap back and forth between the two versions. Most of the changes are under the hood.
+
+Introduction to Thonny
+* Install on lab computers (C:\thonny)
+* Introduce the command line
+---- Do some quick arithmetic
+* Introduce the editor
+---- Note where you save programs when you run them!
+---- Students should create a folder for their work and name files using helpful long names
+* Comments about other IDEs (IDLE, Spyder, Jupyter, Sage Math)
+
+Introduction to Turtles
+* Walk through Turtle-01 commands one line at a time
+* Run Turtle-01 as a script
+* Allow 5 minutes for students to try different things with the Turtles
+
+Start Homework
+* Install Thonny on your own computer (or at the library)
+* Turtle-02
