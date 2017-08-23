@@ -11,6 +11,8 @@ More about printing
 ---- Usage of {} and .format together in creating strings to print
 ---- {x:n} prints the x-th position in a space of at least n characters
 ---- d is for integers, f is for decimals, and .3f prints 3 decimals.
+* Do some loops such as in the documentation to show how this works.
+* As programs become more and more complicated, printing out information as you go is useful for making sure things are working properly.
 
 Write a factor-finding program
 * This is conceptually similar to the prime-finding program
@@ -19,8 +21,8 @@ Write a factor-finding program
 * Note: This should be done without lists.
 
 Start Homework
-* Writing 04 - Prime Numbers
-* Project Euler 04 - Problem #1
-* HW 04 - Project Euler #1 Extension
+* HW 05 - Factor listing (but without a list)
+* HW 05 - Prime Test
 * Sentdex 05 - 09 - Tutorial #25 - Lists and Tuples
 * Sentdex 05 - 10 - Tutorial #26 - List Manipulation
+* Start looking at Project #1 (Dice Simulator)
