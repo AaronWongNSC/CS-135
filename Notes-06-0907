@@ -1,0 +1,21 @@
+Converting the prime number checking code
+* The first adjustment that we can make is to have it take user input.
+---- https://docs.python.org/3/library/functions.html#input
+---- We can make this more complex by analyzing the input before running it, such as checking that it is an integer, etc.
+* We can also turn it into a function by writing it to accept a parameter
+---- Functions are what make programming work, as it takes processes and allows you to "call" them when you need them
+---- This avoids having to write redundant code in many different places.
+
+Applying functions
+* Create a loop to do prime testing of integers from 1 to 1000
+
+Implement the time module for efficiency testing.
+* import time, start_time = time.time(), end_time = time.time(), print(end_time - start_time)
+* If possible, discuss ways to potentially speed up the function.
+
+Start Homework
+* PE 06 - Problem #3
+* Discussion 06 - Artificial Intelligence
+* Sentdex 06 - 11 - Tutorial #25 - Multi-dimensional Lists
+* Sentdex 06 - 12 - Tutorial #26 - Dictionaries
+* Keep working on Project #1 (Dice Simulator)
