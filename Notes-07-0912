@@ -1,0 +1,34 @@
+Sorting algorithms
+* Opening Question: If I gave you a shuffled deck of cards, how would you sort them?
+---- Follow-up question: What is the fastest way to sort the deck?
+* Sorting is an extremely important process when working with data.
+* While sorting is mostly automatic (someone else has written the code), it is important to have an understanding of what is happening
+
+Basic concepts
+* We will be sorting lists of objects. It can be numbers or words. The important thing is that there is a definite order.
+* We will know how many objects are in the list, but we won't necessarily know what the biggest or smallest values are.
+* We will simulate this by making cards numbered 1-10, shuffling them, tossing out 3, and then dealing out the remaining 7 in a row
+* There are two types of actions: Compare and Move
+---- A Compare action means to compare two cards (not necessarily adjacent) to determine which one is greater than the other
+---- A Move action means to move a card from one position and into another. Cards after that position are pushed backward.
+* The goal is to have the cards sorted lowest to highest from left to right
+
+Audibilation of sorting methods:
+* http://panthema.net/2013/sound-of-sorting/
+
+Bubble sort
+* Algorithm:
+---- Work left-to-right, comparing adjacent pairs
+---- If the pairs are in the wrong order, swap them
+---- Repeat until finished
+* Practice a few times
+* Try to create a flowchart
+* Try to program this
+---- This is all about honing your problem solving and logic skills
+* Turn sorting into a function that takes a list as a parameter and returns a list
+(If unfinished by the end of the day, return to it tomorrow)
+
+Start Homework
+* Sentdex 07 - 13 - Tutorial #10 - Functions
+* Sentdex 07 - 14 - Tutorial #11 - Function Parameters
+* Keep working on Project #1 (Dice Simulator)
