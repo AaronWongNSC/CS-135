@@ -1,0 +1,40 @@
+Numbers
+* We have primarily been working with integers.
+* In Python, integers are a certain "type" of object.
+---- type(10) gives that 10 is an integer.
+* The number 10.0 is a floating point number.
+
+Floating Point Numbers
+* Floating point numbers are decimals with finite precision.
+* Try evaluating .1+.2 in Python.
+---- This happens because of how numbers are stored.
+---- Since computers operate in binary, decimals are actually stored as sums of binary fractions.
+
+Binary numbers
+* Before talking about binary fractions, we should talk about binary numbers.
+* We already got a taste of binary numbers when doing the binary addition, but we should take a closer look
+* The number system we use is the base-10 system, and it's named that way because each place value corresponds to a power of 10.
+* Binary is base-2, and each place value corresponds to a power of 2. Furthermore, the digits must all be 0 or 1.
+---- Convert 73 to binary by pulling out the largest power of 2 and subtracting.
+
+Binary decimals
+* The same idea holds true with binary decimals, except that we're taking out reciprocals of powers of 2.
+---- This gives us decimals of 0.5, 0.25, 0.125, 0.0625, etc to work with
+---->> When combined, we will end up with a fraction of the form J/2**N for some N.
+---- It is impossible to write 0.1 as a finite sum of these decimals, so we only get an approximation.
+* The precise details for how floating point numbers work is technical enough that it doesn't matter for this class.
+* The important thing to remember is that almost none of the decimals you see are exact, and that rounding error must be considered
+---- For example, .1 + .2 == .3 is FALSE
+* https://en.wikipedia.org/wiki/IEEE_754
+
+Coin flipping
+* Over the next several classes, we're going to be writing a coin flip simulation/analysis tool.
+* We will start off by practicing using list manipulation to append values onto a list
+* Create a program that asks for a number of coin flips, and then produces a random list of 0s and 1s of the indicated length.
+---- Start with an empty list, write a loop, and then append values to the list
+
+Start Homework
+* HW 13 - Coin Flip Simulation Part 1
+* Sentdex 13 - 25 - Tutorial #46 - Matplotlib Graphing Intro
+* Sentdex 13 - 26 - Tutorial #26 - Matplotlib Labels and Titles
+* Work on Project #2 (Due October 10)
