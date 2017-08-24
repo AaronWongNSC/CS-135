@@ -1,0 +1,28 @@
+Converting to a function
+* The coin flipping program needs to be converted into a function to help us with things in the future
+* The easiest way to do this is to just define it as a function and remember to return the list
+
+Why functions?
+* By writing these different pieces of code as functions, we make our code more readable and more flexible
+* This is related back to the concept of clean code.
+
+Counting zeros and ones
+* We will now create a function that counts the number of zeros and ones in a given list.
+* We will do this by passing it the list and then cycling through to generate two values
+* The return will be a tuple consisting of two numbers
+---- If the list is random, it should be roughly 50-50, though probably not exactly
+
+Counting consecutive pairs
+* Similar to the previous problem, we will count consecutive combinations (00, 01, 10, 11)
+---- If the list is random, these should be distributed evenly (25% each)
+* Once this function is created, we can try to make random lists of numbers and test it
+---- We can also try to manually create random lists and see how random we are
+
+Longest run
+* Write a function that determines the longest run of consecutive 0s or 1s.
+
+Homework
+* Project Euler 14 - Problem #2
+* Sentdex 14 - 27 - Tutorial #48 - Matplotlib Styles
+* Sentdex 14 - 28 - Tutorial #49 - Matplotlib Legends
+* Work on Project #2 (Due October 10)
