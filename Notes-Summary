@@ -1,0 +1,93 @@
+01-0829
+* Introduction to Computer Science
+* Introduction to Programming
+* Introduction to Python
+* Introduction to Thonny
+* Introduction to Turtle
+-- HW: Basic Turtle Commands
+-- Sentdex - Print/Strings/Math
+
+02-0830
+* Review Turtle Homework
+* Multiple Turtles
+* Turtle Documentation
+* Other Modules
+* Finding Tutorials
+* Sorting Discussion
+-- HW - Turtle House
+-- Discussion - Find a tutorial
+-- Writing - What do you want to learn?
+-- Sentdex - Variables/While Loops
+
+03-0831
+* Turtle Racing
+* Breaking down the code
+* Clean Code
+-- Writing - Improvements to Turtle Racing
+-- Sentdex - For Loops/While Loops
+
+04-0905
+* Flow Charts
+* Project Euler
+* Project Euler #1
+-- Writing - Prime Numbers
+-- Project Euler: Problem #1
+-- HW - Project Euler #1 Extension
+-- Sentdex - If/Else/If/Elif/Else
+
+05-0906
+* Prime Numbers
+* More About Printing
+* Write a Factor-Finding Program
+-- HW - Factor Listing
+-- HW - Prime Test
+-- Sentdex - Lists/Tuples/List Manipulation
+
+06-0907
+* Converting the Prime Number Checking Code
+* Applying Functions
+* Implement the time module for efficiency testing
+-- Project Euler: Problem #3
+-- Discussion - Artificial Intelligence
+-- Sentdex - Multi-dimensional Lists/Dictionaries
+
+07-0912
+* Sorting Algorithms
+* Basic Concepts (of sorting)
+* Audibilation of sorting methods
+* Bubble sort
+-- Sentdex - Functions/Function Parameters
+
+08-0913
+* Finish Bubble Sort or work on Project #1
+-- HW - Bubble Sort
+-- Project Euler: Problem #5
+-- Sentdex - Function Parameter Defaults/Global and Local Variables
+-- Project #1 Due next class
+
+09-0919
+* Bubble Sort
+* Cocktail Sort
+* Merge Sort
+* Sorting a Deck of Cards
+* Other Sorting Methods
+* Measures of efficiency
+* Project Euler #6
+-- Project Euler: Problem #6
+-- Sentdex - Writing to File/Appending to Files
+
+10-0920
+* Computer Science
+* Zeros and Ones
+* What is a Computer?
+* Conceptualizing a computer
+* One digit binary adder
+* Make it go - What is actually happening?
+* Half-adder
+* Full-adder
+-- HW - Diagrams of XOR
+-- Sentdex - Reading From a File/Classes
+
+11-0921
+* Allow Students to start on Tic-Tac-Toe
+-- Sentdex - Getting User INput/Statistics Module
