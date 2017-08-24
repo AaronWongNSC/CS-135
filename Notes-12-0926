@@ -1,0 +1,37 @@
+Boolean Algebra
+* The concept of logic gates that we discussed in the binary adder is formalized mathematically as boolean algebra
+* Boolean algebra is a type of math that only has two values: TRUE and FALSE
+---- This is similar to 0 and 1 inside a computer
+* There are a few basic operations in Boolean algebra: AND, OR, and NOT
+---- These function the same way as they do for logic gates
+* We can express these ideas in "truth tables"
+* Similarly to algebra, we can combine multiple statements together using parentheses and multiple operators
+* Every logic statement of this type has an equivalent form as a sequence of logic gates
+
+Applications
+* Boolean algebra is most often used as conditionals in if statements
+* Each relational operator leads to either TRUE or FALSE
+---- Example: 5 > 6 is FALSE, x >= 3 could be TRUE or FALSE depending on the value of x.
+* We can see why we need to be clear about our logic if we think about making decisions
+---- When you pull up to a stop sign, how many things must be true for you to go?
+---->> (no cars AND no pedestrians) OR (car across going straight AND no other cars) OR (car to the left yielding)...
+
+Python logic
+* We can use "and" and "or" exactly as we would in Boolean algebra
+---- In complex statements, it is helpful to use parentheses even if they aren't logically necessary
+* We can also use Booleans in while loops
+---- while True: This is used for an infinite loop. Sometimes this is done with a "break" command
+* We can assign Boolean values to variables just like numbers or strings
+---- A = True, B = False, A or B gives True
+
+Guessing Game
+* Write a program for the following game:
+---- The computer picks an integer from 1 to 100.
+---- You try to guess the number in as few tries as possible.
+---- Every time you guess, the computer tells you whether its number is higher or lower
+
+Start Homework
+* HW 12 - Guessing Game
+* Sentdex 12 - 23 - Tutorial #23 - Module Import Syntax
+* Sentdex 12 - 24 - Tutorial #24 - Making Modules
+* Work on Project #2 (Due October 10)
