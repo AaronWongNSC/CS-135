@@ -1,0 +1,55 @@
+Bubble sort
+* "Rabbits and turtles" is a concept that is used to describe an aspect of sorting methods
+* If you have a large value at the beginning of the list, it's quickly pushed to the end.
+* If you have a small value at the end of the list, it takes a long time to be pushed to the front
+* https://www.youtube.com/watch?v=Cq7SMsQBEUw
+
+Cocktail sort
+* The cocktail sort is a slightly more efficient bubble sort.
+* Instead of always starting at the beginning of the list, it shuffles back and forth through the list
+* This process eliminates turtles
+* https://www.youtube.com/watch?v=njClLBoEbfI
+
+Merge sort
+* The merge sort turns out to be far more efficient sorting method
+* The idea of the merge sort is that you can make short lists in a certain way to make them fast to combine.
+* Algorithm
+---- Break the list into sublists of length 1 (create a tree to show the divisions, use a power of 2 for simplicity)
+---- Merge the lists back together, but sort at each merging
+* The advantage to this method is that merging lists that are already in order is a fast process
+---- You only need to compare the first items in each list instead of searching the whole list
+* https://en.wikipedia.org/wiki/Merge_sort#/media/File:Merge-sort-example-300px.gif
+* Do it a couple times with the paper decks from before.
+* A key difference in this sort is that it costs memory
+---- You need to track your groupings
+---- When you merge your lists, you do it by creating a third list
+
+Sorting a deck of cards
+* We started by talking about sorting a deck of cards
+* Usually, people do a hybrid method
+---- First sort into suits, then arrange in order by insertion
+* Some high efficiency sorting methods are also hybrid methods
+
+Other sorting methods
+* https://www.youtube.com/playlist?list=PLZh3kxyHrVp_AcOanN_jpuQbcMVdXbqei
+
+Measures of efficiency
+* Every sorting method requires a certain number of comparisons and a certain number of moves (and sometimes memory).
+* For each sorting method, we can determine the best and worst case scenarios for the method.
+* We can also compute the average number of moves it takes to sort a list of length n by testing it on all lists of length n.
+* The way that we measure the efficiency is called big-O notation.
+* We think of this as a function that tells us how many moves it takes in relation to the length of the list
+* The simpler sorting methods are O(n^2)
+---- If you have a long list, it will take "something like" the square the length moves to sort it
+---- So a list of length 1,000 takes "something like" 1,000,000 steps to sort
+* The merge sort is more like O(n ln n)
+---- So a list of length 1,000 takes "something like" 7,000 steps to sort
+* https://www.toptal.com/developers/sorting-algorithms/
+
+Project Euler #6
+* Practice using loops to calculate iterated sums -- don't use formulas
+
+Start Homework
+* Project Euler 09 - Problem #6
+* Sentdex 09 - 17 - Tutorial #12 - Writing to File
+* Sentdex 09 - 18 - Tutorial #13 - Appending to Files
