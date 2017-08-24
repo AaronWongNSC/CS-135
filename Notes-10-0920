@@ -1,0 +1,71 @@
+Computer Science
+* Computer science is more than programming. We're going to spend some time looking at the theory.
+
+Zeros and Ones
+* Everything in your computer is a 0 or a 1. Everything that your computer does is a manipulation of a 0 or a 1.
+* That's *ALL* there is to a computer.
+* Because there are only two possibilities, we call this "binary" (bi- like bicycle).
+* Early punch cards were basically instructions written in binary (either the position was punched or it was not)
+* In modern computers, this is usually accomplished through voltage (high level or low level).
+
+What is a computer?
+* This is a good philosophical question to consider.
+---- Computational device? Programmable? Simulations?
+* Early computational devices go back to ancient times
+---- http://io9.gizmodo.com/the-history-of-early-computing-machines-from-ancient-t-549202742
+* The first digital electric computer was created in 1937
+---- It added two binary digits (0+0, 0+1, 1+0, 1+1), and that's it
+
+Conceptualizing a computer
+* Notice that many of the early computers have cranks that "make it go"
+* Conceptually, there is an input, then we "make it go" and it produces an output.
+* For our programs, the input is our program, then we hit the run button, and then it gives us the output.
+---- Some programs require user input in the middle, but we can think of this as part of the "go" process.
+* At a more basic level, the entire computer runs like that.
+---- A hertz is one cycle per second, which is the execution of one command every second (sort of).
+---->> Sort of, because there are lots of parts of the computer working together, and one "command" isn't the right way to think about it
+---->> A FLOP (floating point operation) is the standard measure of computer processing speed
+---- 1 Gigahertz = 1,000,000,000 cycles per second
+
+One digit binary adder
+* Input: Two wires that feed either high or low voltage (denoted 1 for high and 0 for low)
+---- These represent the numbers we're going to add, (0 or 1) plus (0 or 1)
+* "Make it go": To be determined
+---- We can think of this as a magic button for now
+* Output: Two lights representing two digits of a binary number
+---- Technically, these would be wires that will either have high voltage or low voltage, but then we would just connect those to LEDs
+
+Make it go - What is actually happening?
+* There is a complex network of wires and gates.
+---- Wires can be split and all connected wires have the same value
+---- Gates take either one or two inputs and produces one output
+* Gate types
+---- https://en.wikipedia.org/wiki/Logic_gate
+---- AND: Two inputs, the output is 1 if both inputs are 1, otherwise it is 0
+---- OR: Two inputs, the output is 0 if both inputs are 0, otherwise it is 1
+---- NOT: One input, the output is the opposite of the input
+---- XOR: Two inputs, the output is 0 if both inputs are the same, otherwise it is 1
+---->> Draw some practice diagrams and have students think through the results.
+---->> XOR can be made from AND/OR/NOT, so we've actually created a hidden circuit
+* Inside of a computer, there are individual electronic components that actually do these things when connected to wires
+
+Half-adder
+* http://www.circuitstoday.com/half-adder-and-full-adder
+* The adder described above is actually a "half-adder".
+---- A "full-adder" allows for a carried-over value, more on this later
+* Test all four cases of the circuit diagram
+---- The "sum" is the ones digit and the carryover is the twos digit in our situation
+
+Full-adder
+* http://www.circuitstoday.com/half-adder-and-full-adder
+* If we wanted to have more digits, we would need more input wires and we would also need to handle the carry-over
+* The full adder does this
+---- Notice the three inputs (two digits plus carryover -- compare this to adding in columns)
+* Test all eight cases of the circuit diagram
+* We can "hide" the details by just drawing a box and labeling it as a full adder.
+---- We've created another layer of hidden circuitry
+
+Start Homework
+* HW 10 - Diagrams of XOR
+* Sentdex 10 - 19 - Tutorial #18 - Reading From a File
+* Sentdex 10 - 20 - Tutorial #19 - Classes
