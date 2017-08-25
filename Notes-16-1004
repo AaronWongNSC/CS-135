@@ -1,0 +1,33 @@
+Refactoring
+* This term refers to rebuilding a program so that the code is better in some way but that does not change the overall function.
+---- Usually this is about creating efficiency in the program, but it can also just be readability of the code.
+* Now that we have some more experience, let's look back at HW #5.
+---- HW #5: Write a program that determines whether 5754853343 is prime.
+* The day after this assignment was due, we made some modifications
+---- Write it as a program that takes user input
+---- Write it as a function that takes a parameter
+* This is an example of refactoring. We took a procedure and made it more flexible and more useful by writing it differently.
+
+Improving the prime-determining function
+* Are there ways we can improve this code to make it run faster?
+* Are there any calculations or steps that are irrelevant?
+
+Modules
+* To make the prime-determining function available for other programs to use, we can put it into a (local) module.
+* Recall that a module is just a Python script that other programs can import and use its code.
+* Create a module with the prime-determining function in it.
+* Be sure that the module is in the same folder that you're working in
+
+Applications
+* Project Euler 7
+---- How can you use the prime-determining function to solve this problem?
+* Project Euler 10
+---- How can you use the prime-determining function to solve this problem?
+* Notice that once we have this function created, it can be applied to new problems.
+* This is the origin of the idea of programming libraries.
+---- Useful code can be used in lots of places
+
+Homework
+* Project Euler 16 - Problem #7
+* Project Euler 16 - Problem #10
+* Work on Project #2 (Due October 10)
