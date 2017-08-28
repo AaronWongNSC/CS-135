@@ -1,3 +1,63 @@
-Import Data and analyze it
-Exporting data (from simulations, or results of things as text files, include multiline literals)
-Project euler problem taking in data
+Big data
+* Because so much is done electronically, we have digital traces for all sorts of things.
+* But it still takes people to analyze that data.
+* People who do this sort of work are called data scientists, and it's a mixture of both math and computer science.
+---- We will be trying to launch a data science minor in the next year, if this sort of thing sounds interesting to you.
+* A dataset is a collection of data on some particular topic gathered by some organization
+---- https://www.data.gov/ -- US Government Data
+---- https://www.kaggle.com/datasets -- User and industry contributed databases
+---->> Kaggle also has competitions for real money (and real jobs)
+* https://www.youtube.com/watch?v=0Q3sRSUYmys
+
+Current Working Directory
+* An issue that students run into is that they create files and don't know where they are.
+* We will use the Y: drive so that you can access your files from any computer on campus.
+* We will create a folder in the "My Documents" folder called "CS 135" through Windows, and then tell Thonny to look there
+---- import os
+---- os.chdir('Y://My Documents//CS 135')
+* On my version of Thonny, it remembers the directory. If not, you'll need to type this every time.
+
+File management
+* In Python, we can "open" a file for us to use. The three basic options are to write, append, or read.
+---- Write means to delete whatever was there and start a new file
+---- Append means to add on to an existing file
+---- Read means to not change any of the information in the file, just look at it
+* fileObject = open(filePath, mode)
+---- mode is 'w', 'a', or 'r'
+* When finishedm, you always need to close the file by using fileObject.close()
+
+Writing/Appending
+* Once a file is open for writing or appending, we use fileObject.write(string) to write to it.
+* This is an example of "object oriented programming." The fileObject is the object and we apply a "method" to it.
+---- This is the same as turtles, where the method was something that moved the turtle
+* An advantage to this is that you can have lots of files open, and this is how we know which one you're working with
+
+Reading
+* We are going to be working at a much lower level for now, just focusing on getting data in and out of Python
+* fileData = open(filename, 'r').read()
+---- This takes in the entire file as a single string
+* fileData = open(filename, 'r').readlines()
+---- This creates a list where each list is its own line
+---- We can also apply .split() to break things down into individual words.
+* The symbol "\n" means to create a new line. This is known as an escape character.
+
+Other methods
+* There are other methods for reading files. For example, the pandas module has its own way of importing data for databases
+* A standard way of storing data is a CSV (comma separated value), which stores data in a basic two dimensional array
+* We can also use the csv module
+---- import csv
+---- with open('example.csv') as csvfile:
+----     readCSV = csv.reader(csvfile, delimiter=',')
+* Both of these have ways for translating the data as it's read, so that it knows which are dates, numbers, strings, etc.
+
+Homework problem
+* Create a file that generates a CSV that has three columns, and then takes that data back in and graphs it
+---- Column 1 just runs from 1 to 10
+---- Columns 2 and 3 are random integers between 1 and 10
+---- Column 1 is the x-coordinate and columns 2 and 3 are y-coordinates for two different data series
+* The data import should be done using the csv module
+* The graph should be done with matplotlib.
+
+Homework
+* HW 18 - Random Graph Generator
+* HW 18 - Random Graph Generator
