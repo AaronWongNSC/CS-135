@@ -1,0 +1,44 @@
+Numpy
+* Numpy is a module that is specifically designed for dealing with vectors, arrays, and other higher level mathematical objects
+* Numpy is an extremely common module for dealing with databases and other data-related information
+
+Installing numpy
+* Numpy is not part of the standard Thonny package list. However, it is easy to obtain.
+* Menu: Tools -> Manage Packages
+* It is common to use "import numpy as np" in order to reduce the amount of typing you have to do when calling numpy functions
+
+Creating numpy vectors (technically, 1-dim array)
+* The basic type of numpy object is a vector. A vector is very similar to a list in form, but the way we use them is very different.
+* We can turn any list into an array using np.array(list)
+---- Example: np.array([0, 1, 2, 3, 4])
+* We can also have numpy create vectors of consecutive numbers for us: np.arange(start, stop)
+---- arange = array range
+---- This operates the same as range in that np.arange(0,10) gives an array that runs from 0 to 9.
+* To create a vector of length n of all zeros with np.zeros(n)
+* Similarly, there is np.ones(n)
+* To create a vectors whose values are equally spaced over a certain interval, use np.linspace(start, stop, n)
+---- Example: np.linspace(1,10,20) gives the array from 1 to 10 spanned by 20 entries. But notice that the spacing isn't 0.5.
+* We can create vectors with random numbers in them in several ways:
+---- np.random.rand(k) generates n elements uniformly distributed on [0,1]
+---- np.random.randn(k) generates n elements normally with a normal distribute (mean = 0, standard devation = 1)
+---- np.random.randint(a,b,n) generates n random integers between a and b
+---->> This uses the same upper limit rule so that b is not included.
+
+Creating numpy arrays
+* Arrays are just multidimensional vectors.
+* We will most often be working with a 2-dimensional array, so we won't worry about pushing beyond that.
+* We list the dimensions of an array by (rows, columns)
+* Many of the commands from before work if you give it dimensions:
+---- np.zeros((a,b)), np.ones((a,b))
+---- np.random.rand(a,b), np.random.randn(a,b), np.random.randint(a,b)
+---->> Notice that the random sub-module takes two parameters (row and column) but the zeros and ones function takes in a tuple.
+
+Reshaping arrays
+* We will sometimes need to reshape our vectors into arrays.
+* This is a method applied to vectors, so this command is of the form vector.reshape(rows, columns)
+---- This won't work unless rows*columns = len(vector)
+* Notice that this does not actually change the vector as an array.
+---- If you want to "save" the reshaped vector, set it equal to something
+
+Other methods
+* max(), min(), argmax(), argmin()
