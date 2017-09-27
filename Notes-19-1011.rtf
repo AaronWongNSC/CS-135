@@ -42,3 +42,26 @@ Reshaping arrays
 
 Other methods
 * max(), min(), argmax(), argmin()
+
+Slicing
+* Slicing is a way of getting parts of lists or arrays.
+* array[3:9] will give the sub-array with the objects with indices 3, 4, 5, 6, 7, and 8.
+---- Again, notice the upper value is not included.
+* We can leave a blank before and/or after the colon to pick up all the terms from the beginning or end.
+* We can also use negative numbers and think about the list as looping around
+---- Example: array[-4:] grabs the last four elements in the list, array[:-4] grabs everything up to the last four elements
+
+Memory allocation
+* Python tries to preserve memory as much as possible.
+* a = np.zeros(10), b = a
+---- When the first command is run, Python creates an array with 10 zeros in it AND it creates an object a that points to it.
+---- The second command creates an object b that points to the array. It doesn't actually create a copy of the array.
+* TO create a copy, use b = np.copy(a)
+
+Conditional selection
+* One of the powerful things about arrays is that we can apply conditional operators on them to pick just the values that meet the condition.
+* a = np.random.randn(10), a[a>0]
+---- Under the hood, a>0 generates a boolean array that is true when the condition is satisfied and false otherwise.
+---- a[bool_list] will be true in positions where the object in that position is true.
+
+We won't really see the application of these ideas until we start to prgoram in PyGame or Pandas.
