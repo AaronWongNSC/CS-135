@@ -19,10 +19,31 @@ pandas
 Objects in pandas
 * There are two primary objects that we'll be working with in pandas:
 ---- Series: This is a one-dimensional array with labels
----- Dataframe: This is a two-dimensional array of data (like a spreadsheet)
-* A Dataframe can be sliced up to get back series. You can think of each row or each column as its own series.
+---- DataFrame: This is a two-dimensional array of data (like a spreadsheet)
+* A DataFrame can be sliced up to get back series. You can think of each row or each column as its own series.
 
-Creating data
+Creating Series
 * We will first manually create dataframes so that the structure is easier to understand.
+* A series is just a single column of data that's been indexed.
 * But most of the data is already out there on spreadsheets and we can just import those.
-* A series 
+* A series can be built in several ways, but the main command is pd.Series(data, index)
+---- data = ['a', 'b', 'c', 'd'], index = ['Zeroth', 'First', 'Second', 'Third']
+---->> s1 = pd.Series(data); s2 = pd.Series(data, index)
+---- dict = {'Zeroth': 'a', 'First': 'b', 'Second': 'c', Third: 'd'}
+---->> s = pd.Series(dict)
+* Once a series has been created, we can pick out individual items using s['indexname']
+* We can call several items by using s[list_of_indexnames]
+
+Creating DataFrames
+* Dataframes can be thought of as spreadsheets, where both rows and columns are labeled.
+* We usually think of rows as representing an individual object and columns representing a certain feature of the object.
+* DataFrames can be built in several ways as well
+---- Using a list of lists
+---->> data = [['Aaron', 10], ['Bob', 20], ['Callie', 30]]; df = pd.DataFrame(data, columns = ['Name', 'Score'])
+---- Using a dictionary
+---->> data = {'Name': ['Aaron', 'Bob', 'Callie'], 'Score': [10, 20, 30]}; df = pd.DataFrame(data)
+---- Using series -- This is important when merging different information together into one DataFrame
+---->> data = {'Score': pd.Series([10, 20, 30], index=['Aaron', 'Bob', 'Callie'],
+---->>         'Color': pd.Series(['Red', 'Blue', 'Green'], index=['Aaron', 'Bob', 'Dale'] }
+---->> df = pd.DataFrame(data)
+---->>>> Notice that in this example, pandas automatically matches the index and column and puts blank values (NaN) into the holes.
