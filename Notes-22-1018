@@ -1,0 +1,41 @@
+Visualizing data
+* One of the jobs of a data scientist is to present the data in a manner that's understandable
+* There are many types of visualization, and we are going to look at just a couple of them
+
+The iris data set
+* We have four pieces of numerical data for each sample: sepal length/width and petal length/width
+* Logically, we would want to break this up into two graphs, one for sepal data and one for petal data
+---- We will want to create a scatter plot, which is a series of markers for each type of flower
+
+Scatter plot
+* We will need to import pyplot from the matplotlib module for this:
+---- import matplotlib.pyplot as plt
+* Syntax: plt.scatter(x,y,marker=marker,color=color,label=label)
+---- There are other features you can change. You can find the documentation on the internet.
+* Marker types: https://matplotlib.org/api/markers_api.html#module-matplotlib.markers
+* Predefined colors: https://matplotlib.org/api/colors_api.html
+* Label: This is for the legend
+---- There are ways to define your own colors, such as using RGB hex values (#rrggbb)
+* We can also create labels for the axes
+---- plt.xlabel(label); plt.ylabel(label)
+* Use plt.legend(loc='lower right') to get the legend displayed
+---- There are other commands for the location of the legend
+
+Grabbing the data
+* Once we have our iris_data DataFrame, we need to pull out just the rows corresponding to the type of flower
+---- iris_data[ iris_data['class'] == flowertype]
+---- The flowertype is a string corresponding to the list in the data set
+* This gets us the rows, but we still need to isolate further to get down to the column values
+---- iris_data[ iris_data['class'] == flowertype][column]
+
+Putting it all together
+* The command to create the scatter plot looks like this:
+---- plt.scatter(iris_data[ iris_data['class'] == 'Iris-setosa']['sepal_length'],
+----             iris_data[ iris_data['class'] == 'Iris-setosa']['sepal_width'],
+----             marker = 'x', color = 'b', label='Setosa')
+* After running this through all three types and creating the labels/legend, you can call plt.show()
+* There are ways to do this where you do not have to manually call the whole thing several times by using loops and lists
+---- We will pass on the more advanced technique because it's more important to just get the graphs out right now
+
+Start homework
+* HW 22 - Scripted iris plots
