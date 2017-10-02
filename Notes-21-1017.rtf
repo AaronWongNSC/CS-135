@@ -1,0 +1,66 @@
+Changing specific entries in a DataFrame
+* The method for changing entries is different because DataFrames are not really designed for you to do a lot of individual manipulation
+---- The logic of this is that you're often working with DataFrames that contain hundreds or thousands of entries.
+---- The system is set up to apply changes to complete rows/columns rather than manually changing individual items
+* Changing a specific entry: df.at[index,column] = NewValue
+
+Datasets
+* A data set is what we call a collection of data that we're working with.
+* An excellent source for datasets to play with is the UCI Machine Learning Repository
+---- https://archive.ics.uci.edu/ml/index.php
+* Most data sets start off as CSV files (Comma Separated Values) that are then loaded into pandas and convered into a dataframe
+
+Loading datasets
+* Download the iris data set
+---- This dataset is a bunch of measurements of flowers
+---- There are four measurements: sepal length, sepal width, petal length, and petal width
+---- There is also a column that identifies the specific type of iris (there are three possibilities)
+---- https://archive.ics.uci.edu/ml/machine-learning-databases/iris/bezdekIris.data
+* To load the dataset: iris_data = pd.read_csv(file_location,names=['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'class'])
+---- Notice that we have to explicitly name the columns. If you do not, it will try to grab the first row as the headers.
+---- You can always create your datasets so that the first row is the collection of column names, but this is not always standard
+* iris_data.head() will allow you to see the first few rows to ensure that everything looks right
+---- Look at the column headers to make sure they look meaningful
+* You can also load data sets directly from the the internet by replacing the file_location with the URL
+---- iris_data = pd.read_csv('https://archive.ics.uci.edu/ml/machine-learning-databases/iris/bezdekIris.data',names=['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'class'])
+
+Getting general information
+* iris_data.describe()
+---- This gives infromation for numerical columns
+* iris_data['class'].unique()
+---- The .unique() method gives a list of the unique items in that column.
+---- In this case, there are only three types of irises, which is why we only get three values in this list.
+
+Conditional Selection
+* This is the same as what we did for numpy.
+* df[column] > value returns a boolean Series that indicates the rows that are greater than the value.
+* df[ df[column] > value ] returns all the columns of df but just the rows where df[column] > value.
+* This technique is particularly important when trying to sift through data to get only the pertinent information.
+* Example: Selecting only a specific type of iris:
+---- iris_data[ iris_data['class'] == 'Iris-setosa' ]
+---- iris_data[ iris_data['sepal_length'] == 4.9 ]
+
+Other methods
+* We can apply most list methods to a Series
+---- iris_data['sepal_length'].max()
+---- iris_data['sepal_length'].min()
+---- iris_data['sepal_length'].mean()
+---- iris_data['sepal_length'].median()
+---- iris_data['sepal_length'].mode()
+---- iris_data['sepal_length'].std()
+* We can embed these commands into conditional selection
+---- iris_data[ iris_data['sepal_length'] == iris_data['sepal_length'].max() ]
+---->> This lists all the irises that have the maximum sepal length
+
+Group by
+* The groupby() method takes your data and puts items into groups based on some sort of characteristic
+---- iris_data.groupby('class')
+* Calling groupby() on its own creates an object, but doesn't do anything with it.
+* If you apply a method to a groupby() object, you can get aggregate information from it.
+---- iris_data.groupby('class').mean() produces the mean of each group
+---- iris_data.groupby('class').describe() produces a lot of information for each group
+---- iris_data.groupby('class').count() gives the number in each group
+
+Start Homework:
+* Discussion 21 - Looking at data sets
+* HW 21 - Playing with data frames
