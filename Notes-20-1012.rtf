@@ -47,3 +47,12 @@ Creating DataFrames
 ---->>         'Color': pd.Series(['Red', 'Blue', 'Green'], index=['Aaron', 'Bob', 'Dale'] }
 ---->> df = pd.DataFrame(data)
 ---->>>> Notice that in this example, pandas automatically matches the index and column and puts blank values (NaN) into the holes.
+
+Creating new columns
+* We can create new columns following the pattern of assigning a new variable a value.
+---- test1 = [90, 80, 100]; test2 = [80, 90, 90]; scores = { 'Test1': test1, 'Test2': test2 }; students = ['Aaron', 'Bob', 'Callie']
+---- df = pd.DataFrame(data = scores, index = students)
+---- df['Average'] = (df['Test1'] + df['Test2'])/2
+
+Start Homework:
+* HW 20 - DataFrames
