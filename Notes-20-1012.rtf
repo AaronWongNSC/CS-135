@@ -59,8 +59,13 @@ Creating new columns
 ---- df = pd.DataFrame(data = scores, index = students)
 ---- df['Average'] = (df['Test1'] + df['Test2'])/2
 
-Deleting columns
-* df.drop[label]
+Deleting information
+* You can delete both individual rows or columns
+* Pandas is designed to prevent you from accidentally losing information, so dropping rows/columns doesn't change the underlying dataset
+     unless you use the inplace=true parameter
+* Drop a row: df.drop[label]
+* Drop a column: df.drop[index, axis=1]
+---- axis = 0 is the row (default), axis = 1 is the column. This is consistent with the numbering of lists of lists and arrays
 
 Start Homework:
 * HW 20 - DataFrames
