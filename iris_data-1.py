@@ -17,17 +17,3 @@ plt.scatter(iris_data[ iris_data['class'] == 'Iris-virginica']['sepal_length'],
             marker = '*', color = 'k')
 
 plt.show()
-
-plt.scatter(iris_data[ iris_data['class'] == 'Iris-setosa']['petal_length'],
-            iris_data[ iris_data['class'] == 'Iris-setosa']['petal_width'],
-            marker = 'x', color = 'b')
-
-plt.scatter(iris_data[ iris_data['class'] == 'Iris-versicolor']['petal_length'],
-            iris_data[ iris_data['class'] == 'Iris-versicolor']['petal_width'],
-            marker = 'o', color = 'r')
-
-plt.scatter(iris_data[ iris_data['class'] == 'Iris-virginica']['petal_length'],
-            iris_data[ iris_data['class'] == 'Iris-virginica']['petal_width'],
-            marker = '*', color = 'k')
-
-plt.show()
