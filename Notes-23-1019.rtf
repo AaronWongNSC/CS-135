@@ -26,3 +26,41 @@ Three types of learning styles
 ---->> Genetic algorithms are an example of this type of learning
 ---->> This is used in a lot of robotics and game-playing programs
 
+Supervised Training and Testing
+* Usually, machine learning data sets are gigantic, with hundreds of thousands (if not millions) of data points.
+* It turns out that more data does not always lead to better results, both in terms of accuracy and computational cost.
+* General method:
+---- Suppose we have a data set and we want to test the efficacy of a particular learning algorithm.
+---- Step 1) Shuffle the data (this prevents us from picking up artifacts based on how the data was entered).
+---- Step 2) Take some percent of the data as a the training data for the learning algorithm
+---->> The percent depends on the data, but 20% is a good starting point
+---- Step 3) Train the computer
+---- Step 4) Test the computer against the remaining data points to get a score.
+---- Step 5) Repeat several times to ensure consistency/accuracy of the outcome
+
+Iris data set
+* This is a classification data set of 150 data points.
+* The goal is to classify the type of flower based on the physical measurements of the leaves and sepals. We will focus on the sepals.
+* This is what the entire data set looks like: https://github.com/AaronWongNSC/CS-135/blob/master/iris_data-1.py
+* When training, we will take only 20% of the data.
+---- Training data set: https://github.com/AaronWongNSC/CS-135/blob/master/iris_data-2.py
+* The idea is that we would use this data to train the computer, and then test it with the remaining data to get a percent accuracy
+---- Based on the picture, if I point to a specific location, could you guess what type of flower it is?
+
+K Nearest Neighbors
+* We have not yet described a mechanism for actually training the computer.
+* The most intuitive is the K Nearest Neighbors, which is like a voting scheme
+* This method assigns the test value the same classification as the K nearest points in the training data
+* Different values of K will give different results.
+---- If K is too small, then it is heavily impacted by outliers
+---- If K is too large, then it lacks the ability to distinguish points because it captures too many of them all the time
+
+scikit-learn
+* scikit-learn is a Python module for machine learning.
+* It allows us to take these ideas and implement them relatively easily.
+* There's a specific tutorial on KNN: http://scikit-learn.org/stable/tutorial/statistical_inference/supervised_learning.html
+---- Go line by line
+
+Comments
+* This is DIFFICULT to program correctly. The use of existing modules allows us to get the results without the difficult programming.
+* This is HIGH LEVEL content. Machine learning is usually a graduate level course and I'm hiding a lot of the details.
