@@ -1,0 +1,47 @@
+pygame intro
+* I have a version of the Pygame template from the video:
+---- https://github.com/AaronWongNSC/CS-135/blob/master/pygame1-1.py
+* Review and comments
+---- Constants are in CAPS to distinguish them from variables that may change. This is a common convention
+---- RGB colors are 3-tuples
+---- Screen creation is a standard process which is hwy it's part of the template
+---- while running: This is the use of a sentinel variable to let Python know when the game is running
+---- clock.tick() controls the max speed that the program runs
+---->> Complex programs may run slower, which is lag.
+---- pygame.event.get() pulls all of the commands that were sent to Pygame since the last time it was called
+---->> We will use this all the time to get key presses and other screen events
+
+Pygame window
+* The coordinates in a pygame window start with (0,0) in the top left corner.
+* As y increases, you go DOWN, which may seem weird at first.
+* This corresponds to how spreadsheets behave, not how it's done in math
+* Objects can have coordinates that are not on the screen. They just won't render or won't render completely.
+
+Pygame drawing commands
+* For now, the Surface we will be using is screen, but we will later see that we can create other surfaces to control the drawing more.
+* pygame.draw.rect(Surface, color, Rect)
+---- Rect is a 4-item list that represents the rectangle: [x_start, y_start, x_size, y_size]
+* pygame.draw.polygon(Surface, color, pointlist)
+---- pointlist is a list of two dimensional coordinates: [[x_0, y_0], [x_1, y_1], ..., [x_k. y_k]]
+---->> The pointlist does not need to have the last point be the same as the first point. It will automatically connect them.
+---->> Polygons are automatically shaded using inside/outside alternating rules
+* pygame.draw.circle(Surface, color, pos, radius)
+---- pos is a two dimensional coordinate that represents the center: [x_0, y_0]
+* pygame.draw.ellipse(Surface, color, Rect)
+---- Rect is a 4-item list that represents the rectangle in which the ellipse is to be drawn: [x_start, y_start, x_size, y_size]
+* pygame.draw.arc(Surface, color, Rect, start_angle, stop_angle)
+---- Drawing arcs is a bit complicated. You can't just tell it where to start and stop.
+---- Arcs are drawn as sub-portions of the arc of an ellipse.
+---- The angle is in radians, which you learn about in trigonometry. You will need to import math to use pi.
+---->> 0 = right, math.pi/2 = up, math.pi = left, 3*math.pi/2 = down, 2*math.pi = right
+
+
+Sprites
+* The next video will discuss sprites.
+* We will begin some preliminary discussion about this.
+* Sprites are objects on the screen
+* Pygame has a sprite handling mechanism. We need to understand the various bits and pieces of it.
+
+Classes
+* We can create a class with sprites.
+* 
