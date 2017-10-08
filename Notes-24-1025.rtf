@@ -1,0 +1,51 @@
+Types of Machine Learning Problems
+* The KNN algorithm is used to solve classification problems.
+---- A classification problem is a problem tries to assign an output category based on input information.
+---- In the iris data set, we had measurements of flower leaves as the input and flower variety as the classification.
+* There are other types of machine learning problems.
+---- Clustering
+---->> Given a collection of data, is there a meaningful way to break it up into groups?
+---- Regression
+---->> Given a collection of numerical data, create a function that predicts the output based on the input
+
+Linear Regression
+* We are going to focus on regression because it's one of the most fundamental concepts that is used in machine learning.
+* This is going to get a little math-heavy, but I'll try to avoid as many equations as possible and focus on the ideas.
+---- You don't need a lot of deep math to do this "properly," but you do need to know some linear algebra.
+* The idea is that you're given some data points and you're trying to find the "best" line that approximates that data
+
+Math
+* On a graph, points are plotted as ordered pairs (x,y), where x is the horizontal coordinate and y is the vertical.
+* The equation of a line is y = mx + b, where m is the slope and b is the y-coordinate of the y-intercept.
+* We can imagine that we have two knobs, one to change m and one to change b.
+* Our goal is to turn the knobs so that the line we get is good at approximating the data.
+
+Desmos activity
+* Create a table with the data points (4, 4), (5, 5), and (6, 5).
+* There is no line that contains all three points.
+* Create a line y = mx + b and create two sliders for m and b.
+* Let the students try to create a line of best fit by playing with the sliders.
+---- Have the students report their attempts at best fit. They should write down their answers for future calculation.
+
+Measuring error
+* How can we figure out whose line is the best? What does that even mean?
+* For each data point, we can calculate the error by calculating how far off our line is from the answer.
+---- Mathematically, it's helpful to use the square of the error. This makes formulas work out better.
+---- Taking the square penalizes bad errors and is more fogiving of small errors.
+* After calculating the error of each point, we can compute the sum of those errors to get the total error
+---- Which line did the best?
+* There are mathematical formulas that give us the exact values that minimize the error in this manner.
+---- The goal here is just to get you to understand some of the ideas.
+
+Excel
+* We can run linear regressions through Excel
+* File -> Options -> Add-Ons -- Make sure that the data analysis add-on is installed.
+* Create the columns and run the analysis (Regression)
+---- Use x and y as the column headers
+* There's a ton of extra information that you would need to understand in practical applications
+* The coefficients is what we're looking for. This gives us the equation for the line of best fit.
+
+Machine learning
+* The way we apply this in machine learning is that we do this same idea but with more variables.
+* When there is too much data that the direct computation is too large, we have to find other means for calcuating the coefficients.
+---- This is where the machine learning starts to kick in again
