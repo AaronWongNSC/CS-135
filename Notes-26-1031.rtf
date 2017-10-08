@@ -19,6 +19,7 @@ Pygame window
 
 Pygame drawing commands
 * For now, the Surface we will be using is screen, but we will later see that we can create other surfaces to control the drawing more.
+* https://github.com/AaronWongNSC/CS-135/blob/master/pygame-drawing.py
 * pygame.draw.rect(Surface, color, Rect)
 ---- Rect is a 4-item list that represents the rectangle: [x_start, y_start, x_size, y_size]
 * pygame.draw.polygon(Surface, color, pointlist)
@@ -34,14 +35,40 @@ Pygame drawing commands
 ---- Arcs are drawn as sub-portions of the arc of an ellipse.
 ---- The angle is in radians, which you learn about in trigonometry. You will need to import math to use pi.
 ---->> 0 = right, math.pi/2 = up, math.pi = left, 3*math.pi/2 = down, 2*math.pi = right
-
+* pygame.draw.line(Surface, color, start_point, stop_point)
+---- Both points are two element lists: [x, y]
+* pygame.draw.lines(Surface, color, closed, point_list)
+---- closed is a boolean that indicates whether the first and last point are connected
+---- pointlist is a list of two dimensional coordinates: [[x_0, y_0], [x_1, y_1], ..., [x_k. y_k]]
 
 Sprites
 * The next video will discuss sprites.
 * We will begin some preliminary discussion about this.
-* Sprites are objects on the screen
-* Pygame has a sprite handling mechanism. We need to understand the various bits and pieces of it.
+* Sprites are objects/images on the screen
+* Pygame has a sprite handling mechanism. This will be introduced in the next video.
 
 Classes
-* We can create a class with sprites.
-* 
+* A class is a container for a type of object. We can have many classes of sprites.
+---- Examples: sprite for the player, sprites for the enemies, sprites for weapons, etc.
+* Classes are given capital letters to help distinguish them.
+* There is a standard setup that has to happen for every new sprite class
+---- class Name(pygame.sprite.Sprite):
+----     def __init__(self):
+----         pygame.sprite.Sprite.__init__(self)
+----         self.image = pygame.Surface(image_size)
+----         self.rect = self.image.get_rect()
+---->> image_size is a 2-tuple and indicates the size that the object will fit in
+---->> We will use self.image.fill(COLOR) for simplicity
+
+Customizing Sprites
+* Inside of __init__(self), we can create variables that will be attached to the sprite.
+* In a game, we might have variables for the location of the sprite, or player hit points
+* The Class acts like a container that will carry all the information around so that you only need to pass the object to get all the variables
+* To instantiate a new variable, use self.variable_name = variable_value
+
+Bouncing Box
+* Talk through this with the students.
+* https://github.com/AaronWongNSC/CS-135/blob/master/pygame-BouncingBox.py
+
+Begin Homework:
+* HW 26 - Looping box
