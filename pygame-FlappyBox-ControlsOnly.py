@@ -24,7 +24,6 @@ class FlappyBox(pygame.sprite.Sprite):
         self.image.fill(BLUE)
         self.rect = self.image.get_rect()
 
-        self.rect.bottom = HEIGHT/2
         self.rect.center = (WIDTH/2, HEIGHT/2)
 
         self.y_vel = 0
