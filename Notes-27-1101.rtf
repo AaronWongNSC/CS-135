@@ -1,0 +1,83 @@
+Sprite Creation
+* Pygame has an entire system for dealing with sprites
+* There are two basic structures that we will be using.
+* Classes
+---- A class is a container for objects in Python. Specifically, our objects will be sprites.
+---- Not only can you hold objects, but you can also hold data about them.
+---- All sprites have and x and y variable (top left corner), but they also have other ways to refer to parts of the sprite rectangle.
+* Sprite Groups
+---- Sprite groups are groups that contain sprites
+---- We use sprite groups to help keep track of different types of objects
+---- For example, in a space fighting game, we might have a player, enemies, and projectiles as different sprite groups.
+
+Sprite interactions
+* The first thing we want to do is to be able to create and control a sprite.
+* There are two methods that are both helpful for this process: Key pressed or key down?
+---- The key pressed approach uses the Pygame buffer to collect information about whether a key has been pressed.
+---- The key down approach asks the question "Is the key down right now?"
+---- The first is good for discrete behaviors like firing a shot from a gun and the second is good for continuous behaviors like movement.
+
+Moving box
+* We will make a simple moving box
+* Start with the template: https://github.com/AaronWongNSC/CS-135/blob/master/pygame1-1.py
+* We need to add a class and initialize it.
+---- class MovingBox(pygame.sprite.Sprite):
+----     def __init__(self):
+----         pygame.sprite.Sprite.__init__(self)
+----         self.image = pygame.Surface((20,20))
+----         self.image.fill(BLUE)
+----         self.rect = self.image.get_rect()
+---- 
+----         self.rect.center = (WIDTH/2, HEIGHT/2)
+* We now need to create an update method for our box.
+----     def update(self):
+----         keystate = pygame.key.get_pressed()
+----         if keystate[pygame.K_LEFT]:
+----             self.rect.x -= 5
+----         if keystate[pygame.K_RIGHT]:
+----             self.rect.x += 5
+* The pygame.key.get_pressed() command gets the state of all the keys at the same time.
+---- This is a basically a tuple that contains a value for every single key on the keyboard.
+---- We refer to specific keys by position, and pygame.<<KEY NAME>> is a number that refers to the position.
+---- This mapping may vary from computer to computer, so this gives us a way to make uniform references across platforms.
+* This method is good for continuous movement because it is asking the question, "Is the key being pressed right now?"
+* We need to create a sprite of this class, a sprite group for it to go into, and then call the update and draw command for the sprites.
+---- Before the game loop:
+---->> all_sprites = pygame.sprite.Group()
+---->> player = MovingBox()
+---->> add_sprites.add(player)
+---- Inside the update phase of the game loop:
+---->> all_sprites.update()
+---- Inside the render phase of the game loop:
+---->> all_sprites.draw(screen)
+* When we run the program, we ought to have a little blue box that we can move left and right.
+* The box can go off the side of the screen, so we can either create code to allow it to loop back or put a wall on both sides.
+---- Wall option:
+---->> if self.rect.right > WIDTH + 20:
+---->>     self.rect.right = 0
+---->> if self.rect.left < 0 - 20:
+---->>     self.rect.left = WIDTH
+
+Flapping box
+* We will now add a control that causes our box the "flap."
+* This is the beginning of a physics engine.
+---- A physics engine is a part of the program that creates the behaviors of objects.
+---- We will have a constant gravity pulling downward.
+* We will need to create a new variable within our initialization of the MovingBox Class:
+---- self.y_vel = 0
+* We need to add code in the update portion that creates the effect of gravity
+---- self.y_vel += 1
+---- self.rect.y += self.y_vel
+* Notice that this causes the box to fall down off the bottom of the screen.
+* We need to prevent the box from falling forever by making the bottom of the screen a floor.
+---- if self.rect.bottom > HEIGHT:
+----     self.rect.bottom = HEIGHT
+----     self.y_vel = 0
+* This gives us a box with gravity, but doesn't allow us to fly.
+* We will make flapping a discrete motion, so that one press equals one flap.
+* In the event loop, we need to add a new event.type for the code to look for.
+---- if event.type == pygame.KEYDOWN:
+----     if event.key == pygame.K_UP:
+----         player.y_vel -= 10
+
+
