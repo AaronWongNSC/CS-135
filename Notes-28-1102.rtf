@@ -1,9 +1,66 @@
 Introduction to physics
-* Position, velocity, acceleration
-* Basic laws of motion (parabolas)
+* Although video game physics do not necessarily correspond to real physics, real physics gives a model that we can use.
+* There are three basic terms we need to understand:
+---- Position: This is your location relative to some reference point.
+---->> Most of the time, the reference point is (0,0), but there are times that you might have objects positioned relative to each other.
+---->> Positions are found by self.rect.x, self.rect.y, self.rect.top, self.rect.left, self.rect.bottom, self.rect.right, as well as others.
+---->> Documentation: https://www.pygame.org/docs/ref/rect.html
+* Velocity: This the change of position in a given amount of time.
+---->> For our purposes, the given amount of time is one frame. We've been using 30 frames per second, but this is an arbitrary choice.
+---->> We need to create a variable to represent this value. We can use something like self.x_vel and self.y_vel.
+---->> The new position is always found by using the old position and adding the velocity.
+---->>>> Technically: x_new = x_old + x_vel * time_increment.
+---->>>> The time_increment term doesn't matter to us since we've fixed the time_increment to be a single fixed quantity
+* Acceleration: This is the change of velocity in a given amount of time.
+---->> Acceleration is a little bit difficult to understand sometimes because we don't "see" it.
+---->> Gravity is an acceleration. It not only causes objects to fall, but in the absence of other forces, the speed of falling increases
+---->> Objects reach a terminal velocity because there's another acceleration caused by things like friction from gravity.
+---->> For games, we need to think about accerlation for horizontal movement as well.
+---->>>> "Ice physics" usually means that players slide around, and this is due to a smaller horizontal acceleration from friction
+---->>>> "Momentum" is usually the word people use to relate to the idea that objects do not stop immediately. 
 
-Creating physics in a game
-* Ground and ice physics
-* Wind
-* Air resistance (actual vs video game)
+Programming the physics
+* The current flappy box code doesn't use this type of model for physics. Velocity is instantaneously changing.
+* This gives the motion a very artificial movement where the motion starts and stops instantaneously.
+* Converting the physics to have a more natural feel actually requires a significant number of steps.
+* Step 0: Change the window size to give us more space (800 by 600)
+* Step 1: Changing the engine
+---- We want the x-coordinate physics to behave more like the y-coordinate physics
+---- We need to add an x velocity variable in the initialization: self.x_vel = 0
+---- We need to change the line that alters the x position: self.rect.x += self.x_vel
+* Step 2: Changing the response to key presses
+---- We will start with instantaneous full speed when pressing the button.
+---->> if keystate[pygame.K_LEFT]:
+---->>     self.x_vel = -20
+---->> if keystate[pygame.K_RIGHT]:
+---->>     self.x_vel = 20
+* Step 3: Creating a decaying speed by applying a proportional acceleration.
+---- In the update method: self.x_vel = int(0.8*self.x_vel)
+---->> The value 0.8 can be adjusted to 0.95 to give more of a sliding effect
+* Step 4: Creating a slowly increasing velocity
+---- The existing motion feels "jumpy" when you just tap the controls.
+---- This is the opposite effect instantaneously slowing down, except for starting up.
+---- We can fix this by incrementing the speed up to the max speed.
 
+Jumping
+* Currently, we have a flapping box because we can apply a vertical acceleration at any time.
+* We want to make a more standard jumping box by only allowing jumps to happen when on the ground.
+* For now, the ground is just when the bottom is at height 0. We will deal with platforms later.
+* In the event loop:
+---- if event.key == pygame.K_UP:
+----     if player.rect.bottom == HEIGHT:
+----         player.y_vel = -15
+
+Double Jumping
+* It is not physical to allow double jumps, but video games.
+* We will create a state variable that will switch between a first and second jump: self.jump
+---- self.jump = 0 when we are on the ground. This will be set initially and whenever we hit the ground.
+---- self.jump = 1 when we jump from the ground. We will add this to the jump command.
+---- self.jump = 2 when we hit jump for the second time while in the air.
+* This requires us to update the jump value when we jump each time.
+* This adjustment is in the final version of the RunnyJumpyBox.py code
+---- https://github.com/AaronWongNSC/CS-135/blob/master/RunnyJumpyBox.py
+
+Begin Homeweork:
+* HW 28 - Shmup Part 1
+* HW 28 - Triple Jump
