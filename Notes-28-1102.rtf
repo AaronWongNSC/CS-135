@@ -35,12 +35,16 @@ Programming the physics
 ---->> if keystate[pygame.K_RIGHT]:
 ---->>     self.x_vel = 20
 * Step 3: Creating a decaying speed by applying a proportional acceleration.
----- In the update method: self.x_vel = int(0.8*self.x_vel)
+---- In the update method: self.x_vel = 0.8*self.x_vel
 ---->> The value 0.8 can be adjusted to 0.95 to give more of a sliding effect
 * Step 4: Creating a slowly increasing velocity
 ---- The existing motion feels "jumpy" when you just tap the controls.
 ---- This is the opposite effect instantaneously slowing down, except for starting up.
 ---- We can fix this by incrementing the speed up to the max speed.
+
+Real physics
+* We are doing a poor approximation of real physics with these calculations.
+* For real physics, we would want to control the acceleration instead of the velocity and we would use another layer of equations.
 
 Jumping
 * Currently, we have a flapping box because we can apply a vertical acceleration at any time.
