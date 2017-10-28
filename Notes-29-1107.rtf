@@ -8,3 +8,53 @@ Managing many sprites
 Clumsy class creation
 * Usually there's a progression of building code that works followed by refactoring the code
 * We need to go through the clumsy part first because it helps us to identify the types of information we need if we're going to generalize.
+* Our goal will be to make a program that creates balls that bounce around the screen, but the ball size and color will vary.
+* We will start with just one ball and work our way up and learn how to recognize when we should be refactoring
+
+Bouncing ball
+* We will start with the template.
+---- https://github.com/AaronWongNSC/CS-135/blob/master/pygame1-1.py
+* We want to increase the size of the window to 800x600 so that we have more room.
+* We will add a new Class called SlowBigBall. We always start with the basics:
+---- class BigSlowBall(pygame.sprite.Sprite):
+----     def __init__(self):
+----         pygame.sprite.Sprite.__init__(self)
+----         self.image = pygame.Surface((80,80))
+----         self.rect = self.image.get_rect()
+* We need to give the ball an initial position, so we will start it in the center of the screen
+----         self.rect.center = (WIDTH/2, HEIGHT/2)
+* Instead of a rectangle, we want a circle, so we will draw a circle onto the surface
+----         pygame.draw.circle(self.image, BLUE, [80,80], 40)
+* We also need to initialize the ball with some initial speed
+----         self.x_vel = 5
+----         self.y_vel = 5
+* We also need to add an update method
+----     def update(self):
+----         self.rect.x += self.x_vel
+----         self.rect.y += self.y_vel
+* When we run the program, we have a blue ball that moves off the screen. Your task will be to make it bounce off the walls.
+
+Making more balls
+* We also want to be able to generate more balls by pressing buttons.
+* We will use the space bar as the button to create them.
+* In the event loop:
+---- if event.type == pygame.K_SPACE:
+----     ball = BigSlowBall()
+----     all_sprites.add(ball)
+* This now allows us to create balls.
+
+Better graphics
+* If we create balls very rapidly, we'll see that we get black outlines around the ball.
+* We can fix this by initializing the sprite with a color key, which basically makes that color transparent.
+---- self.image.set_colorkey(BLACK)
+* This is the type of thing that we use when working with green screens, but in reverse.
+---- We tell the computer to draw the image ONLY where there is green instead of NOT drawing where the image is black.
+
+Modifying the code:
+* Students should change the program so that it bounces off the walls.
+* Students should add three more classes so that there is a fast/slow big/small ball.
+* The homework that is due has further instructions.
+
+Begin Homework:
+* HW 29 - Bouncing Balls
+* HW 29 - Pygame Shmup 2
