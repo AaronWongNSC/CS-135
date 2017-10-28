@@ -81,6 +81,8 @@ while running:
 
     # Update
     collision = pygame.sprite.spritecollide(mainball, other_balls, True, pygame.sprite.collide_circle)
+    if collosion:
+        print('Boom!')
         
     all_sprites.update()
 
