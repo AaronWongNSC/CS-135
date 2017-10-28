@@ -1,0 +1,52 @@
+Refactoring the balls
+* Notice that when you made the four balls that you had to basically copy the code and just change a couple values.
+* This is a big sign that you should refactor the code.
+* Our next task is to be able to create balls using parameters to control the size, color, shape, and so forth.
+* We will start over from the template again, but keep the bouncing ball code handy
+---- class BouncingBall(pygame.sprite.Sprite)
+----     def __init__(self, radius, color, x_vel, y_vel):
+----         pygame.sprite.Sprite.__init__(self)
+----         self.image = pygame.Surface((2*radius, 2*radius))
+----         self.rect = self.image.get_rect()
+----         self.image.set_colorkey(BLACK)
+----         self.rect.center = (random.randint(radius, WIDTH - radius), random.randint(radius, HEIGHT - radius))
+----         pygame.draw.circle(self.image, color, [radius, radius], radius)
+----         self.x_vel = x_vel
+----         self.y_vel = y_vel
+* From this, we only need to change the commands we use to create the balls to control their speed, size, and color.
+* We will limit ourselves to two types of balls.
+---- if event.key == pygame.K_1:
+----     ball = BouncingBall(40, BLUE, (-1) ** random.randint(0,1) * 5, (-1) ** random.randint(0,1) * 5)
+----     all_sprites.add(ball)
+---- if event.key == pygame.K_2:
+----     ball = BouncingBall(20, RED, (-1) ** random.randint(0,1) * 10, (-1) ** random.randint(0,1) * 10)
+----     all_sprites.add(ball)
+
+Sprite Collisions
+* We want to make the sprites bounce off of each other.
+* We will create a single white ball that will destroy the other balls
+---- mainball = BouncingBall(30, WHITE, 7, 7)
+* To check for collisions, we need to add the following to the main game update loop
+---- collision = pygame.sprite.spritecollide(mainball, other_balls, True)
+---->> This creates a list of sprites in the group other_balls that intersect the sprite mainball.
+---->> The True parameter indicates that the sprite in other_balls should be killed.
+---->>>> When the sprite is destroyed, it is removed from all groups and it simply no longer exists.
+* There is a problem: The sprites don't always look like they collide.
+---- To see this more clearly, we can slow down the frame rate.
+* This is a result of the sprite collision being related to the rectangular bounding box.
+---- We can replace the circles with filled boxes to see this.
+---->> self.image.fill(color)
+* To use a circular bounding box, we need to add a self.radius in the __init__ method and change the collision method
+---- In the class __init__:
+---->> self.radius = radius
+---- In the update of the main loop:
+---->> collision = pygame.sprite.spritecollide(mainball, other_balls, True, pygame.sprite.collide_circle)
+
+General hitboxes
+* The idea of hitboxes in games is tied to our sprite collision process.
+* Here is a video (6 min) that goes into a bit more detail about how this is done in modern gaming.
+---- https://www.youtube.com/watch?v=z7xMIRzIDpU
+
+Begin Homework
+* HW 31 - Multiple Behaviors of Sprites
+* HW 31 - Pygame Shmup Part 4
