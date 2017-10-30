@@ -1,2 +1,34 @@
 Walls
-* Collisions and such
+* We will take away gravity for a bit to understand sprite walls.
+* We have some code that will be our basic model.
+---- https://github.com/AaronWongNSC/CS-135/blob/master/MovingBoxWithWalls.py
+* We need to make a new class for the wall sprites.
+---- This is not going to be the same as the player class because our walls should not respond to the player input.
+* It should be intuitive that the walls are a completely different type of object than the player, and so should have its own class.
+* Our walls will be orthogonal (horizontal/vertical) and we need to give the location (top left corner) and the size.
+
+Collisions
+* The idea is that we work in each dimension separately
+* If hit a wall, you need to stop. This is accomplished in several steps:
+---- We need to detect the collision using pygame.sprite.spritecollide()
+---- If a collision is detected, we need to know whether to push the player to the left side of the wall or the right side
+---->> collisions[0] is the first item in the collisions list.
+---- If there are multiple collisions at once, you need to hope that your sprites are consistent to avoid odd behaviors.
+---->> These behaviors are sometimes seen as glitches in games, such as strange warps and other things like that.
+
+End Goal
+* We will create a simple game where the goal is to reach a certain spot on the screen.
+* It's really just another wall, but we'll put it in a special group.
+---- https://github.com/AaronWongNSC/CS-135/blob/master/MovingBoxWithGoal.py
+
+Combining things
+* Create a game where you are trying to reach the goal, but you have to work your way around some walls.
+---- Don't make it overly complicated. This is just a proof of concept.
+* Create a game where you are trying to reach the goal, but there are balls bouncing around the screen that cause you to restart if hit.
+* Combine these together to have a game where you're trying to reach the goal while working around walls and avoiding balls.
+---- You can decide whether to try to make the balls bounce off the walls or pass through them.
+---- I recommend having the balls pass through the walls at first because it's easier.
+
+Start homework:
+* HW 32 - Walls and Balls
+* HW 32 - Pygame Shmup Part 5
