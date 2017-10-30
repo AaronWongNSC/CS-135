@@ -1,0 +1,39 @@
+Animation
+* Animation is nothing more than a series of still images run together.
+* Even our moving box is an animation.
+* But we can also have internal animation.
+---- We've already seen this with the rotating meteors and explosion
+* We're going to look at a couple other types of animation.
+
+Moving walls
+* We can make the walls move based on a set pattern or path
+---- https://github.com/AaronWongNSC/CS-135/blob/master/UpDownWall.py
+* This is an example of class inheritance.
+* By creating a class out of Wall, we get all of the properties of wall for free, which includes the initial location
+* We did not program in extra physics for the wall to push the player, so the physics is wrong.
+---- The player should not be scooted to the side, but pushed by the wall
+---- We would need to add a check for the motion of the player and the wall to get this part right.
+
+Color-changing walls
+* We will use the internal clock to change the color of the wall every couple seconds.
+* The video does this by creating a timer and tracking how long it has been since each change.
+---- https://github.com/AaronWongNSC/CS-135/blob/master/ColorChangingWall.py
+* This approach can be used to make the wall disappear after a certain amount of time.
+* We can create other variables that control the properties of the wall, such as making them timed one-way walls or something like that.
+
+Sprite animation
+* The videos use the actual clock for animation, but it's common to use frame counts.
+---- This means that the game physics doesn't change as a result of lag.
+* The goomba animation demonstrates this
+---- https://github.com/AaronWongNSC/CS-135/blob/master/Mario.zip
+* For the goomba animation, he's operating on a local timer.
+---- A local timer is a timer that counts only the number of frames the goomba has existed.
+* There are also things that we can make happen on a global timer
+* We can also start to see how player states can be fleshed out into sprite animations.
+---- Various Mario states:
+---->> Player states: Small Mario/Large Mario/Fire Flower Mario/Invincible Mario
+---->> Motion states; Standing, Moving 1/2 (animation), ducking (large Mario only), jumping, skidding
+
+Begin Homework:
+* HW 33 - Advanced walls
+* HW 33 - Pygame Shmup Part 6
